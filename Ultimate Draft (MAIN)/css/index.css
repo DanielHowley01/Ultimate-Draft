@@ -1,0 +1,323 @@
+/* ─── Header ──────────────────────────────────── */
+.home-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.home-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 3px;
+}
+
+.home-sub {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+/* ─── Filters ─────────────────────────────────── */
+.home-filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: var(--r-full);
+  transition: all var(--t);
+  cursor: pointer;
+  font-family: var(--font);
+}
+
+.filter-btn:hover {
+  color: var(--text-2);
+  border-color: var(--border-2);
+}
+
+.filter-btn.active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+/* ─── League group ────────────────────────────── */
+.league-group {
+  margin-bottom: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.league-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.league-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* ─── Fixture row ─────────────────────────────── */
+.fixture-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  transition: background var(--t);
+  cursor: pointer;
+  gap: 12px;
+}
+
+.fixture-row:last-child {
+  border-bottom: none;
+}
+
+.fixture-row:hover {
+  background: var(--bg-2);
+}
+
+.fixture-teams {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.team-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-name.right {
+  text-align: right;
+}
+
+.fixture-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+}
+
+.score-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: var(--r-xs);
+  white-space: nowrap;
+}
+
+.score-time.live {
+  color: var(--red);
+  background: var(--red-dim);
+  border-color: transparent;
+  animation: pulse 2s infinite;
+}
+
+/* ─── Fixture meta ────────────────────────────── */
+.fixture-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.fixture-lobbies {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+}
+
+.fixture-lobbies.new {
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-color: transparent;
+}
+
+.fixture-arrow {
+  font-size: 18px;
+  color: var(--text-3);
+  line-height: 1;
+}
+
+/* ─── Mobile ──────────────────────────────────── */
+@media(max-width: 768px) {
+  .page {
+    padding-bottom: 76px;
+  }
+
+  .home-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .home-filters {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .home-filters::-webkit-scrollbar { display: none; }
+
+  /* Shrink lobby pill on mobile so team names aren't squeezed */
+  .fixture-lobbies {
+    font-size: 11px;
+    padding: 3px 7px;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Shorter text for "create" state on mobile */
+  .fixture-lobbies.new {
+    max-width: 70px;
+  }
+
+  .fixture-arrow {
+    display: none;
+  }
+
+  /* Give team names more room */
+  .fixture-row {
+    padding: 12px 12px;
+    gap: 8px;
+  }
+
+  .team-name {
+    font-size: 13px;
+  }
+}
+
+.loading-fixtures {
+  display: flex;
+  justify-content: center;
+  padding: 48px 0;
+}
+/* ─── Page tabs ───────────────────────────────── */
+.home-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 3px;
+  margin-bottom: 20px;
+}
+
+.home-tab {
+  flex: 1;
+  padding: 8px 16px;
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-3);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: all var(--t);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.home-tab.active {
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+/* ─── My Games badge ──────────────────────────── */
+.my-games-badge {
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 1px 6px;
+  border-radius: var(--r-full);
+  line-height: 1.4;
+}
+
+/* ─── Game status labels ──────────────────────── */
+.game-status-live {
+  color: var(--red) !important;
+  background: var(--red-dim) !important;
+  border-color: transparent !important;
+  animation: pulse 2s infinite;
+}
+
+.game-status-draft {
+  color: var(--amber) !important;
+  background: var(--amber-dim) !important;
+  border-color: transparent !important;
+}
+
+.game-status-wait {
+  color: var(--text-3);
+}
+
+/* ─── Match score in group header ─────────────── */
+.mygame-score {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-2);
+  margin-left: 8px;
+  font-weight: 700;
+}
+
+/* ─── Hidden utility ──────────────────────────── */
+.hidden { display: none !important; }
+
+/* ─── Date header ─────────────────────────────── */
+.date-header {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 16px 4px 8px;
+}
+
+.date-header:first-child {
+  padding-top: 0;
+}

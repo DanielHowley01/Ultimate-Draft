@@ -1,0 +1,245 @@
+/* ─── Fixture bar ─────────────────────────────── */
+.team-fixture-bar {
+  height: 52px;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  gap: 12px;
+}
+
+.tfb-team {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.tfb-team.right { flex-direction: row-reverse; }
+
+.tfb-abbr {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-3);
+  background: var(--bg-3);
+  padding: 3px 7px;
+  border-radius: var(--r-xs);
+  letter-spacing: 0.5px;
+}
+
+.tfb-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.tfb-centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.tfb-score {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  letter-spacing: -0.5px;
+  color: var(--text);
+}
+
+.tfb-time {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--red);
+  font-family: var(--font-mono);
+  animation: pulse 1.4s infinite;
+}
+
+/* ─── Team wrap ───────────────────────────────── */
+.team-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 16px 14px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ─── Section ─────────────────────────────────── */
+.team-section {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 14px;
+}
+
+.team-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 12px;
+}
+
+/* ─── Player card ─────────────────────────────── */
+.team-player-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 13px 14px;
+  margin-bottom: 8px;
+}
+
+.tpc-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.tpc-pos {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: var(--r-xs);
+  flex-shrink: 0;
+  min-width: 30px;
+  text-align: center;
+}
+
+.tpc-pos.fwd { background: #ef444420; color: var(--red); }
+.tpc-pos.mid { background: #3b82f620; color: var(--blue); }
+.tpc-pos.def { background: #4ade8020; color: var(--accent); }
+
+.tpc-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tpc-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.tpc-team {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.tpc-events {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.tpc-event {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--r-full);
+}
+
+.tpc-event.goal   { background: var(--accent-dim); color: var(--accent); }
+.tpc-event.assist { background: var(--blue-dim);   color: var(--blue);   }
+.tpc-event.card   { background: var(--amber-dim);  color: var(--amber);  }
+
+.tpc-pts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  flex-shrink: 0;
+}
+
+.tpc-pts-num {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text);
+  letter-spacing: -1px;
+}
+
+.tpc-pts-label {
+  font-size: 10px;
+  color: var(--text-3);
+  font-weight: 600;
+}
+
+/* ─── Total ───────────────────────────────────── */
+.team-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+
+.team-total-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.team-total-num {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  letter-spacing: -1px;
+}
+
+/* ─── Scoring ─────────────────────────────────── */
+.team-scoring {
+  display: flex;
+  flex-direction: column;
+}
+
+.scoring-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.scoring-row:last-child { border-bottom: none; }
+
+.scoring-icon { font-size: 15px; width: 22px; text-align: center; }
+
+.scoring-desc {
+  font-size: 13px;
+  color: var(--text-2);
+  flex: 1;
+}
+
+.scoring-pts {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.scoring-pts.positive { color: var(--accent); }
+.scoring-pts.negative { color: var(--red); }
+
+/* ─── Back btn ────────────────────────────────── */
+.team-back-btn {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}

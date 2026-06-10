@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Team — Ultimate Draft Live</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/team.css" />
+</head>
+<body>
+
+  <!-- Fixture bar — populated by JS -->
+  <div class="team-fixture-bar">
+    <div class="tfb-team">
+      <span class="tfb-abbr" id="tfb-abbr-home"></span>
+      <span class="tfb-name" id="tfb-name-home"></span>
+    </div>
+    <div class="tfb-centre">
+      <div class="tfb-score" id="tfb-score">vs</div>
+      <div class="tfb-time"  id="tfb-time"></div>
+    </div>
+    <div class="tfb-team right">
+      <span class="tfb-name" id="tfb-name-away"></span>
+      <span class="tfb-abbr" id="tfb-abbr-away"></span>
+    </div>
+  </div>
+
+  <div class="team-wrap">
+
+    <!-- Your picks -->
+    <div class="team-section">
+      <div class="team-section-label">Your picks</div>
+      <div id="team-picks">
+        <div class="loading-fixtures"><div class="spinner"></div></div>
+      </div>
+      <div class="team-total">
+        <span class="team-total-label">Total points</span>
+        <span class="team-total-num" id="team-total">0</span>
+      </div>
+    </div>
+
+    <!-- Scoring reference (static) -->
+    <div class="team-section">
+      <div class="team-section-label">Scoring</div>
+      <div class="team-scoring">
+        <div class="scoring-row"><span class="scoring-icon">⚽</span><span class="scoring-desc">Goal</span><span class="scoring-pts positive">+6</span></div>
+        <div class="scoring-row"><span class="scoring-icon">🅰</span><span class="scoring-desc">Assist</span><span class="scoring-pts positive">+4</span></div>
+        <div class="scoring-row"><span class="scoring-icon">🛡</span><span class="scoring-desc">Clean sheet (DEF)</span><span class="scoring-pts positive">+4</span></div>
+        <div class="scoring-row"><span class="scoring-icon">🛡</span><span class="scoring-desc">Clean sheet (MID)</span><span class="scoring-pts positive">+1</span></div>
+        <div class="scoring-row"><span class="scoring-icon">⏱</span><span class="scoring-desc">90 mins played</span><span class="scoring-pts positive">+2</span></div>
+        <div class="scoring-row"><span class="scoring-icon">⏱</span><span class="scoring-desc">45+ mins played</span><span class="scoring-pts positive">+1</span></div>
+        <div class="scoring-row"><span class="scoring-icon">🟨</span><span class="scoring-desc">Yellow card</span><span class="scoring-pts negative">-1</span></div>
+        <div class="scoring-row"><span class="scoring-icon">🟥</span><span class="scoring-desc">Red card</span><span class="scoring-pts negative">-3</span></div>
+        <div class="scoring-row"><span class="scoring-icon">🔴</span><span class="scoring-desc">Own goal</span><span class="scoring-pts negative">-2</span></div>
+      </div>
+    </div>
+
+    <!-- Back to match -->
+    <a id="back-btn" class="btn btn-primary btn-lg team-back-btn">
+      ← Back to live match
+    </a>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/team.js"></script>
+
+</body>
+</html>

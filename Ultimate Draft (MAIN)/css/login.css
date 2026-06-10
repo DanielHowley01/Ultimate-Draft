@@ -1,0 +1,228 @@
+.login-wrap {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ─── Left panel ──────────────────────────────── */
+.login-left {
+  flex: 1;
+  background: var(--bg-2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 48px;
+  overflow: hidden;
+  position: relative;
+}
+
+.login-brand {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.login-brand em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.login-hero {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.login-hero h1 {
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.login-hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.login-hero p {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.6;
+  max-width: 380px;
+  margin-bottom: 40px;
+}
+
+.login-numbers {
+  display: flex;
+  gap: 36px;
+  margin-bottom: 40px;
+}
+
+.login-num {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.login-num strong {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+
+.login-num span {
+  font-size: 12px;
+  color: var(--text-3);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.login-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.login-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-3);
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+}
+
+.login-footer-text {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+/* ─── Right panel ─────────────────────────────── */
+.login-right {
+  width: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  background: var(--bg);
+}
+
+.login-box {
+  width: 100%;
+  max-width: 360px;
+  animation: fadeUp 0.4s ease 0.05s both;
+}
+
+.login-box-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.login-box-sub {
+  font-size: 14px;
+  color: var(--text-2);
+  margin-bottom: 28px;
+}
+
+/* ─── Tabs ────────────────────────────────────── */
+.login-tabs {
+  display: flex;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 3px;
+  margin-bottom: 24px;
+}
+
+.login-tab {
+  flex: 1;
+  padding: 9px;
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-3);
+  background: transparent;
+  transition: all var(--t);
+}
+
+.login-tab.active {
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+/* ─── Form ────────────────────────────────────── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-form.hidden { display: none; }
+
+.login-form .btn-primary {
+  width: 100%;
+  margin-top: 4px;
+  padding: 13px;
+  font-size: 15px;
+  border-radius: var(--r-md);
+}
+
+.login-hint {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.login-hint a { color: var(--accent); }
+
+/* ─── Google ──────────────────────────────────── */
+.btn-google {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  transition: all var(--t);
+  cursor: pointer;
+  font-family: var(--font);
+}
+
+.btn-google:hover {
+  border-color: var(--border-2);
+  background: var(--bg-3);
+}
+
+/* ─── Bonus ───────────────────────────────────── */
+.login-bonus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 20px;
+  padding: 10px 14px;
+  background: var(--accent-dim);
+  border-radius: var(--r-md);
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+/* ─── Responsive ──────────────────────────────── */
+@media(max-width: 860px) {
+  .login-left  { display: none; }
+  .login-right { width: 100%; }
+}

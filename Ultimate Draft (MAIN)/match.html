@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Match — Ultimate Draft Live</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/match.css" />
+</head>
+<body>
+
+  <!-- Fixture bar — populated by JS -->
+  <div class="match-fixture-bar">
+    <div class="mfb-team">
+      <span class="mfb-abbr" id="mfb-abbr-home"></span>
+      <span class="mfb-name" id="mfb-name-home"></span>
+    </div>
+    <div class="mfb-centre">
+      <div class="mfb-score" id="mfb-score">vs</div>
+      <div class="mfb-time"  id="mfb-time"></div>
+    </div>
+    <div class="mfb-team right">
+      <span class="mfb-name" id="mfb-name-away"></span>
+      <span class="mfb-abbr" id="mfb-abbr-away"></span>
+    </div>
+  </div>
+
+  <div class="match-top-nav">
+    <a href="index.html" class="back-link" onclick="sessionStorage.setItem('returnToMyGames','1')">‹ My Games</a>
+    <a id="my-team-link" class="btn btn-ghost btn-sm">My Team</a>
+  </div>
+
+  <div class="match-wrap">
+
+    <!-- Your team -->
+    <div class="match-your-team">
+      <div class="match-section-label">Your team</div>
+      <div class="match-player-cards" id="my-player-cards">
+        <div class="loading-fixtures"><div class="spinner"></div></div>
+      </div>
+      <div class="match-your-total">
+        <span class="match-total-label">Total</span>
+        <span class="match-total-pts" id="my-total-pts">0 pts</span>
+      </div>
+    </div>
+
+    <!-- Pot tracker -->
+    <div class="match-pot-bar">
+      <div class="match-pot-info">
+        <span class="match-pot-label">Pot</span>
+        <span class="coin" id="pot-total">—</span>
+      </div>
+      <div class="match-pot-prizes">
+        <div class="match-pot-prize">
+          <span>🥇</span>
+          <span class="coin" id="pot-1st">—</span>
+        </div>
+        <div class="match-pot-prize">
+          <span>🥈</span>
+          <span class="coin" id="pot-2nd">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live leaderboard -->
+    <div class="match-leaderboard">
+      <div class="match-section-label">Leaderboard</div>
+      <div id="match-lb-list">
+        <div class="loading-fixtures"><div class="spinner"></div></div>
+      </div>
+    </div>
+
+    <!-- Live events feed -->
+    <div class="match-events">
+      <div class="match-section-label">Match events</div>
+      <div id="events-feed">
+        <div class="empty" style="padding:12px 0">No events yet</div>
+      </div>
+    </div>
+
+    <!-- Full time button — shown only when fixture status = ft -->
+    <button class="btn btn-primary btn-lg match-ft-btn hidden" id="ft-btn" onclick="goToResults()">
+      Full time — See results
+    </button>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/match.js"></script>
+
+</body>
+</html>

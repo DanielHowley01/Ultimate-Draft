@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate Draft Live</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+  <div class="login-wrap">
+
+    <!-- Left -->
+    <div class="login-left">
+      <div class="login-brand">Ultimate Draft <em>Live</em></div>
+
+      <div class="login-hero">
+        <h1>Draft.<br>Watch.<br><em>Win.</em></h1>
+        <p>Pick 2 players from a live match, compete against 5 others, and take the pot.</p>
+
+        <div class="login-numbers">
+          <div class="login-num">
+            <strong>6</strong>
+            <span>Per lobby</span>
+          </div>
+          <div class="login-num">
+            <strong>2</strong>
+            <span>Your picks</span>
+          </div>
+          <div class="login-num">
+            <strong>90'</strong>
+            <span>One match</span>
+          </div>
+        </div>
+
+        <div class="login-tags">
+          <span class="login-tag">Premier League</span>
+          <span class="login-tag">La Liga</span>
+          <span class="login-tag">Serie A</span>
+          <span class="login-tag">Bundesliga</span>
+          <span class="login-tag">Ligue 1</span>
+          <span class="login-tag">Champions League</span>
+          <span class="login-tag">World Cup</span>
+          <span class="login-tag">Euros</span>
+        </div>
+      </div>
+
+      <div class="login-footer-text">© 2026 Ultimate Draft Live</div>
+    </div>
+
+    <!-- Right -->
+    <div class="login-right">
+      <div class="login-box">
+
+        <div class="login-tabs">
+          <button class="login-tab active" id="tab-in"  onclick="switchTab('in')">Sign in</button>
+          <button class="login-tab"        id="tab-up"  onclick="switchTab('up')">Sign up</button>
+        </div>
+
+        <!-- Sign in -->
+        <div class="login-form" id="form-in">
+          <div class="field">
+            <label>Email</label>
+            <input type="email" placeholder="you@example.com" id="in-email" />
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" placeholder="••••••••" id="in-pass" />
+          </div>
+          <button class="btn btn-primary" onclick="handleSignIn()">Sign in</button>
+          <p class="login-hint"><a href="#">Forgot password?</a></p>
+        </div>
+
+        <!-- Sign up -->
+        <div class="login-form hidden" id="form-up">
+          <div class="field">
+            <label>Username</label>
+            <input type="text" placeholder="GoalMachine99" id="up-name" />
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="email" placeholder="you@example.com" id="up-email" />
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" placeholder="Min. 8 characters" id="up-pass" />
+          </div>
+          <button class="btn btn-primary" onclick="handleSignUp()">Create account</button>
+          <p class="login-hint">By signing up you agree to our <a href="#">Terms</a></p>
+        </div>
+
+        <div class="divider-text">or</div>
+
+        <button class="btn-google" onclick="handleGoogle()">
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+            <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908C16.658 14.013 17.64 11.705 17.64 9.2z" fill="#4285F4"/>
+            <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#34A853"/>
+            <path d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/>
+            <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
+          </svg>
+          Continue with Google
+        </button>
+
+        <div class="login-bonus">
+          <span class="coin">500</span>
+          free coins on signup
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/login.js"></script>
+<script>
+  function switchTab(t) {
+    ['in','up'].forEach(id => {
+      document.getElementById('form-' + id).classList.toggle('hidden', id !== t);
+      document.getElementById('tab-' + id).classList.toggle('active', id === t);
+    });
+  }
+</script>
+
+</body>
+</html>
