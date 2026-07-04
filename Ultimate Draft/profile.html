@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile — Ultimate Draft Live</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3790967100178179"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-logo">Ultimate Draft <em>Live</em></div>
+    <div class="nav-links">
+      <a href="index.html"       class="nav-link">Home</a>
+      <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+      <a href="profile.html"     class="nav-link active">Profile</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-coins">◉ <span id="nav-coin-balance">500</span></div>
+      <button class="theme-toggle" onclick="toggleTheme()">●</button>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- Profile header -->
+    <div class="profile-header">
+      <div class="profile-avatar" id="profile-avatar">U</div>
+      <div class="profile-info">
+        <div class="profile-username" id="profile-username">Loading...</div>
+        <div class="profile-joined"  id="profile-joined"></div>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="editProfile()">Edit</button>
+    </div>
+
+    <!-- Coin wallet -->
+    <div class="profile-wallet">
+      <div class="wallet-balance">
+        <div class="wallet-label">Coin balance</div>
+        <div class="wallet-amount">
+          <span class="coin" id="profile-coins">—</span>
+        </div>
+      </div>
+      <div class="wallet-actions">
+        <button class="btn btn-primary btn-sm" id="watch-ad-btn" onclick="watchAd()">
+          ▶ Watch ad · +50
+        </button>
+        <button class="btn btn-ghost btn-sm" onclick="buyCoins()">
+          Buy coins
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats grid -->
+    <div class="profile-stats">
+      <div class="profile-stat-card">
+        <div class="psc-value" id="stat-matches">—</div>
+        <div class="psc-label">Matches played</div>
+      </div>
+      <div class="profile-stat-card">
+        <div class="psc-value" id="stat-wins">—</div>
+        <div class="psc-label">Wins</div>
+      </div>
+      <div class="profile-stat-card">
+        <div class="psc-value" id="stat-winrate">—</div>
+        <div class="psc-label">Win rate</div>
+      </div>
+      <div class="profile-stat-card">
+        <div class="psc-value accent" id="stat-net">—</div>
+        <div class="psc-label">Net coins</div>
+      </div>
+    </div>
+
+    <!-- Match history -->
+    <div class="section-header">
+      <h2 class="section-title">Match history</h2>
+    </div>
+
+    <div id="history-list">
+      <div class="empty">Loading history...</div>
+    </div>
+
+    <!-- Sign out -->
+    <button class="btn btn-ghost profile-signout" onclick="signOut()">
+      Sign out
+    </button>
+
+  </main>
+
+  <!-- Mobile bottom nav -->
+  <nav class="bottom-nav">
+    <a href="index.html"       class="bottom-nav-item">
+      <span class="bnav-icon">⚽</span>
+      <span class="bnav-label">Matches</span>
+    </a>
+    <a href="leaderboard.html" class="bottom-nav-item">
+      <span class="bnav-icon">🏆</span>
+      <span class="bnav-label">Rankings</span>
+    </a>
+    <a href="profile.html"     class="bottom-nav-item active">
+      <span class="bnav-icon">👤</span>
+      <span class="bnav-label">Profile</span>
+    </a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/profile.js"></script>
+
+</body>
+</html>

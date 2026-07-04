@@ -1,0 +1,374 @@
+/* ─── Back link ───────────────────────────────── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-3);
+  margin-bottom: 20px;
+  transition: color var(--t);
+}
+
+.back-link:hover { color: var(--text-2); }
+
+/* ─── Fixture header ──────────────────────────── */
+.fixture-header {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  margin-bottom: 28px;
+}
+
+.fixture-header-league {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.fh-league-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.fixture-header-teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.fh-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.fh-team.right { align-items: flex-end; }
+
+.fh-team-badge {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-2);
+  letter-spacing: 0.5px;
+}
+
+.fh-team-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.fh-score-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.fh-score {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+
+.fh-time {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  background: var(--bg-3);
+  padding: 3px 8px;
+  border-radius: var(--r-full);
+}
+
+.fh-time.live-pulse {
+  color: var(--red);
+  background: var(--red-dim);
+  animation: pulse 1.4s infinite;
+}
+
+/* ─── Lobbies list ────────────────────────────── */
+.lobbies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* ─── Lobby card ──────────────────────────────── */
+.lobby-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  cursor: pointer;
+  transition: all var(--t);
+  gap: 12px;
+}
+
+.lobby-card:hover {
+  border-color: var(--border-2);
+  background: var(--bg-2);
+  transform: translateY(-1px);
+}
+
+.lobby-card.full {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.lobby-card.full:hover {
+  transform: none;
+  background: var(--bg);
+  border-color: var(--border);
+}
+
+.lobby-card-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.lobby-number {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  min-width: 24px;
+}
+
+.lobby-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.lobby-host {
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+.lobby-host strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ─── Slots ───────────────────────────────────── */
+.lobby-slots {
+  display: flex;
+  gap: 4px;
+}
+
+.slot {
+  width: 20px;
+  height: 8px;
+  border-radius: var(--r-xs);
+}
+
+.slot.filled {
+  background: var(--accent);
+}
+
+.slot.empty {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+}
+
+/* ─── Lobby card right ────────────────────────── */
+.lobby-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.lobby-stake .coin {
+  font-size: 15px;
+}
+
+.lobby-spots {
+  font-size: 11px;
+  color: var(--text-3);
+  font-weight: 500;
+}
+
+/* ─── Modal ───────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.hidden { display: none; }
+
+.modal {
+  background: var(--bg);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-xl);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeUp 0.2s ease;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 0;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.modal-close {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r-sm);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--t);
+  cursor: pointer;
+}
+
+.modal-close:hover { color: var(--text); }
+
+.modal-sub {
+  font-size: 13px;
+  color: var(--text-3);
+  padding: 6px 20px 0;
+}
+
+.modal-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── Stake options ───────────────────────────── */
+.stake-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.stake-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 8px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: all var(--t);
+  font-family: var(--font);
+}
+
+.stake-btn:hover {
+  border-color: var(--border-2);
+}
+
+.stake-btn.active {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.stake-pot {
+  font-size: 11px;
+  color: var(--text-3);
+  font-weight: 500;
+}
+
+/* ─── Payout ──────────────────────────────────── */
+.modal-payout {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+
+.payout-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.payout-row:last-child { border-bottom: none; }
+
+.modal-balance {
+  font-size: 13px;
+  color: var(--text-3);
+  text-align: center;
+}
+
+/* ─── Modal footer ────────────────────────────── */
+.modal-footer {
+  display: flex;
+  gap: 8px;
+  padding: 0 20px 20px;
+}
+
+.modal-footer .btn { flex: 1; }
+
+@media(max-width: 768px) {
+  .page { padding-bottom: 76px; }
+}
+/* ─── In-lobby states ─────────────────────────── */
+.lobby-card.in-lobby {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.you-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent) !important;
+}
+
+.hidden { display: none !important; }

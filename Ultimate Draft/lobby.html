@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lobbies — Ultimate Draft Live</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/lobby.css" />
+</head>
+<body>
+
+  <!-- Top nav -->
+  <nav class="nav">
+    <div class="nav-logo">Ultimate Draft <em>Live</em></div>
+    <div class="nav-links">
+      <a href="index.html"       class="nav-link">Home</a>
+      <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+      <a href="profile.html"     class="nav-link">Profile</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-coins">◉ <span id="nav-coin-balance">500</span></div>
+      <button class="theme-toggle" onclick="toggleTheme()">●</button>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <a href="index.html" class="back-link">‹ All fixtures</a>
+
+    <!-- Fixture header -->
+    <div class="fixture-header">
+      <div class="fixture-header-league">
+        <span class="badge badge-live">Live</span>
+        <span class="fh-league-name"></span>
+      </div>
+      <div class="fixture-header-teams">
+        <div class="fh-team">
+          <div class="fh-team-badge fh-team-badge-home"></div>
+          <span class="fh-team-name fh-team-name-home"></span>
+        </div>
+        <div class="fh-score-block">
+          <div class="fh-score"></div>
+          <div class="fh-time"></div>
+        </div>
+        <div class="fh-team right">
+          <div class="fh-team-badge fh-team-badge-away"></div>
+          <span class="fh-team-name fh-team-name-away"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lobbies section -->
+    <div class="section-header">
+      <h2 class="section-title">Open Lobbies</h2>
+      <button class="btn btn-primary btn-sm" onclick="showCreateModal()">+ New lobby</button>
+    </div>
+
+    <div class="lobbies-list" id="lobbies-list"></div>
+
+    <!-- Create lobby modal -->
+    <div class="modal-overlay hidden" id="create-modal" onclick="hideCreateModal(event)">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 class="modal-title">Create a lobby</h3>
+          <button class="modal-close" onclick="hideCreateModal()">✕</button>
+        </div>
+
+        <p class="modal-sub"><span class="modal-fixture-name"></span></p>
+
+        <div class="modal-body">
+          <div class="field">
+            <label>Entry fee</label>
+            <div class="stake-options">
+              <button class="stake-btn active" onclick="selectStake(this, 50)">
+                <span class="coin">50</span>
+                <span class="stake-pot">Pot: <span class="coin">300</span></span>
+              </button>
+              <button class="stake-btn" onclick="selectStake(this, 100)">
+                <span class="coin">100</span>
+                <span class="stake-pot">Pot: <span class="coin">600</span></span>
+              </button>
+              <button class="stake-btn" onclick="selectStake(this, 250)">
+                <span class="coin">250</span>
+                <span class="stake-pot">Pot: <span class="coin">1500</span></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="modal-payout">
+            <div class="payout-row">
+              <span>🥇 1st place</span>
+              <span class="coin" id="payout-1st">240</span>
+            </div>
+            <div class="payout-row">
+              <span>🥈 2nd place</span>
+              <span class="coin" id="payout-2nd">60</span>
+            </div>
+          </div>
+
+          <div class="modal-balance">
+            Your balance: <span class="coin" id="modal-coin-balance">500</span>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-ghost" onclick="hideCreateModal()">Cancel</button>
+          <button class="btn btn-primary" onclick="createLobby()">
+            Create &amp; join
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Mobile bottom nav -->
+  <nav class="bottom-nav">
+    <a href="index.html"       class="bottom-nav-item active">
+      <span class="bnav-icon">⚽</span>
+      <span class="bnav-label">Matches</span>
+    </a>
+    <a href="leaderboard.html" class="bottom-nav-item">
+      <span class="bnav-icon">🏆</span>
+      <span class="bnav-label">Rankings</span>
+    </a>
+    <a href="profile.html"     class="bottom-nav-item">
+      <span class="bnav-icon">👤</span>
+      <span class="bnav-label">Profile</span>
+    </a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/lobby.js"></script>
+
+</body>
+</html>

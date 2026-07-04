@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate Draft Live</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3790967100178179"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-logo">Ultimate Draft <em>Live</em></div>
+    <div class="nav-links">
+      <a href="index.html"       class="nav-link active">Home</a>
+      <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+      <a href="profile.html"     class="nav-link">Profile</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-coins">◉ <span id="nav-coin-balance">—</span></div>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">●</button>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- Page tabs: Fixtures | My Games -->
+    <div class="home-tabs">
+      <button class="home-tab active" id="tab-fixtures" onclick="switchTab('fixtures', this)">Fixtures</button>
+      <button class="home-tab"        id="tab-mygames"  onclick="switchTab('mygames', this)">
+        My Games <span class="my-games-badge hidden" id="my-games-count">0</span>
+      </button>
+    </div>
+
+    <!-- ── FIXTURES TAB ── -->
+    <div id="panel-fixtures">
+      <div class="home-header">
+        <div>
+          <h1 class="home-title">Live &amp; Upcoming</h1>
+          <p class="home-sub">Tap a fixture to view lobbies</p>
+        </div>
+        <div class="home-filters">
+          <button class="filter-btn active" onclick="filterLeague('all', this)">All</button>
+          <button class="filter-btn" onclick="filterLeague('pl', this)">PL</button>
+          <button class="filter-btn" onclick="filterLeague('laliga', this)">La Liga</button>
+          <button class="filter-btn" onclick="filterLeague('ucl', this)">UCL</button>
+          <button class="filter-btn" onclick="filterLeague('seriea', this)">Serie A</button>
+          <button class="filter-btn" onclick="filterLeague('bundesliga', this)">Bundesliga</button>
+          <button class="filter-btn" onclick="filterLeague('ligue1', this)">Ligue 1</button>
+        </div>
+      </div>
+      <div id="fixtures-list"></div>
+    </div>
+
+    <!-- ── MY GAMES TAB ── -->
+    <div id="panel-mygames" class="hidden">
+      <div class="home-header">
+        <div>
+          <h1 class="home-title">My Games</h1>
+          <p class="home-sub">All your active and recent lobbies</p>
+        </div>
+      </div>
+      <div id="my-games-list"></div>
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="index.html"       class="bottom-nav-item active">
+      <span class="bnav-icon">⚽</span>
+      <span class="bnav-label">Matches</span>
+    </a>
+    <a href="leaderboard.html" class="bottom-nav-item">
+      <span class="bnav-icon">🏆</span>
+      <span class="bnav-label">Rankings</span>
+    </a>
+    <a href="profile.html"     class="bottom-nav-item">
+      <span class="bnav-icon">👤</span>
+      <span class="bnav-label">Profile</span>
+    </a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/index.js"></script>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+  </script>
+
+</body>
+</html>

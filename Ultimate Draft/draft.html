@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Draft — Ultimate Draft Live</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/draft.css" />
+</head>
+<body>
+
+  <!-- Fixture bar -->
+  <div class="draft-fixture-bar">
+    <div class="dfb-team">
+      <span class="dfb-abbr dfb-abbr-home"></span>
+      <span class="dfb-name dfb-name-home"></span>
+    </div>
+    <div class="dfb-centre">
+      <div class="dfb-score" id="dfb-score">vs</div>
+      <div class="dfb-time"  id="dfb-time"></div>
+    </div>
+    <div class="dfb-team right">
+      <span class="dfb-name dfb-name-away"></span>
+      <span class="dfb-abbr dfb-abbr-away"></span>
+    </div>
+    <div class="dfb-badge">
+      <span class="badge" id="dfb-badge"></span>
+    </div>
+  </div>
+
+  <!-- ── WAITING ROOM ── -->
+  <div class="draft-wrap" id="waiting-room">
+
+    <div class="waiting-header">
+      <h2 class="waiting-title">Waiting room</h2>
+      <p class="waiting-sub">Ready up to start the draft. Auto-starts in <strong id="auto-start-countdown">60</strong>s</p>
+      <div class="waiting-auto-bar"><div class="waiting-auto-fill" id="auto-fill"></div></div>
+    </div>
+
+    <div class="waiting-players" id="waiting-players"></div>
+
+    <!-- Ready button — all players -->
+    <button class="btn btn-primary btn-lg waiting-ready-btn" id="ready-btn" onclick="markReady()">
+      ✓ I'm ready
+    </button>
+
+    <!-- Host-only buttons -->
+    <button class="btn btn-ghost btn-lg waiting-ready-btn hidden" id="host-start-btn" onclick="kickOffDraft()">
+      ▶ Start game now
+    </button>
+    <button class="btn btn-danger btn-lg waiting-ready-btn hidden" id="host-delete-btn" onclick="deleteLobby()">
+      🗑 Delete lobby
+    </button>
+
+    <p class="waiting-hint" id="waiting-hint"></p>
+
+  </div>
+
+  <!-- ── DRAFT BOARD ── -->
+  <div class="draft-wrap hidden" id="draft-board">
+
+    <div class="draft-timer-block">
+      <div class="draft-turn-info">
+        <div class="draft-turn-avatar" id="turn-avatar">—</div>
+        <div class="draft-turn-text">
+          <span class="draft-turn-name" id="turn-name">Starting...</span>
+          <span class="draft-turn-sub"  id="turn-sub"></span>
+        </div>
+        <div class="draft-turn-countdown" id="countdown">—</div>
+      </div>
+      <div class="draft-timer-bar">
+        <div class="draft-timer-fill" id="timer-fill"></div>
+      </div>
+    </div>
+
+    <div class="draft-pool" id="draft-pool">
+      <div class="loading-fixtures"><div class="spinner"></div></div>
+    </div>
+
+    <div class="draft-order-block">
+      <div class="draft-order-title">Draft order</div>
+      <div class="draft-order-list" id="draft-order-list"></div>
+    </div>
+
+    <div class="your-picks-block">
+      <div class="your-picks-title">Your picks</div>
+      <div class="your-picks-slots">
+        <div class="your-pick-slot empty" id="pick-slot-1">
+          <div class="your-pick-slot-num">1</div>
+          <div class="your-pick-slot-name">—</div>
+        </div>
+        <div class="your-pick-slot empty" id="pick-slot-2">
+          <div class="your-pick-slot-num">2</div>
+          <div class="your-pick-slot-name">—</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/draft.js"></script>
+
+</body>
+</html>

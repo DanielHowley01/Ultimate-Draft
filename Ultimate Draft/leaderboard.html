@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaderboard — Ultimate Draft Live</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/leaderboard.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-logo">Ultimate Draft <em>Live</em></div>
+    <div class="nav-links">
+      <a href="index.html"       class="nav-link">Home</a>
+      <a href="leaderboard.html" class="nav-link active">Leaderboard</a>
+      <a href="profile.html"     class="nav-link">Profile</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-coins">◉ <span id="nav-coin-balance">—</span></div>
+      <button class="theme-toggle" onclick="toggleTheme()">●</button>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <div class="lb-header">
+      <div>
+        <h1 class="home-title">Leaderboard</h1>
+        <p class="home-sub" id="lb-sub">Top managers this week</p>
+      </div>
+      <div class="lb-period-tabs">
+        <button class="lb-tab active" onclick="switchPeriod('week', this)">Week</button>
+        <button class="lb-tab" onclick="switchPeriod('month', this)">Month</button>
+        <button class="lb-tab" onclick="switchPeriod('all', this)">All time</button>
+      </div>
+    </div>
+
+    <!-- Top 3 podium — rendered by JS -->
+    <div id="lb-podium" class="lb-podium"></div>
+
+    <!-- Full rankings — rendered by JS -->
+    <div id="lb-list" class="lb-list"></div>
+
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="index.html"       class="bottom-nav-item">
+      <span class="bnav-icon">⚽</span>
+      <span class="bnav-label">Matches</span>
+    </a>
+    <a href="leaderboard.html" class="bottom-nav-item active">
+      <span class="bnav-icon">🏆</span>
+      <span class="bnav-label">Rankings</span>
+    </a>
+    <a href="profile.html"     class="bottom-nav-item">
+      <span class="bnav-icon">👤</span>
+      <span class="bnav-label">Profile</span>
+    </a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/leaderboard.js"></script>
+
+</body>
+</html>

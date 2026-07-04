@@ -1,0 +1,261 @@
+/* ─── Header ──────────────────────────────────── */
+.lb-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+/* ─── Period tabs ─────────────────────────────── */
+.lb-period-tabs {
+  display: flex;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 3px;
+}
+
+.lb-tab {
+  padding: 7px 16px;
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-3);
+  background: transparent;
+  transition: all var(--t);
+  cursor: pointer;
+  font-family: var(--font);
+}
+
+.lb-tab.active {
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+/* ─── Podium ──────────────────────────────────── */
+.lb-podium {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 20px 16px 0;
+}
+
+.podium-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  max-width: 120px;
+}
+
+.podium-crown {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.podium-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-3);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-2);
+}
+
+.podium-avatar.gold {
+  background: #fbbf2420;
+  border-color: #fbbf24;
+  color: #fbbf24;
+  width: 52px;
+  height: 52px;
+  font-size: 18px;
+}
+
+.podium-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.podium-stat {
+  font-size: 12px;
+}
+
+.podium-base {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: var(--r-md) var(--r-md) 0 0;
+  padding: 8px 0;
+  margin-top: 6px;
+}
+
+.podium-base.first {
+  background: #fbbf2420;
+  color: #fbbf24;
+  border: 1px solid #fbbf2440;
+  border-bottom: none;
+  height: 64px;
+}
+
+.podium-base.second {
+  background: #94a3b820;
+  color: #94a3b8;
+  border: 1px solid #94a3b840;
+  border-bottom: none;
+  height: 48px;
+}
+
+.podium-base.third {
+  background: #cd7f3220;
+  color: #cd7f32;
+  border: 1px solid #cd7f3240;
+  border-bottom: none;
+  height: 36px;
+}
+
+/* ─── List ────────────────────────────────────── */
+.lb-list {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.lb-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--t);
+}
+
+.lb-row:last-child { border-bottom: none; }
+.lb-row:hover { background: var(--bg-3); }
+
+.lb-row.you {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+}
+
+.lb-row.top3 { }
+
+.lb-rank {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-3);
+  min-width: 22px;
+  text-align: center;
+}
+
+.lb-rank.gold   { color: #fbbf24; }
+.lb-rank.silver { color: #94a3b8; }
+.lb-rank.bronze { color: #cd7f32; }
+
+.lb-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-2);
+  flex-shrink: 0;
+}
+
+.lb-avatar.gold {
+  background: #fbbf2420;
+  border-color: #fbbf24;
+  color: #fbbf24;
+}
+
+.lb-avatar.you {
+  background: var(--blue-dim);
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.lb-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.lb-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.lb-meta {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.lb-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.lb-winrate {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+}
+
+.lb-coins .coin {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@media(max-width: 768px) {
+  .page { padding-bottom: 76px; }
+  .lb-header { flex-direction: column; gap: 12px; }
+}
+/* ─── You tag ─────────────────────────────────── */
+.you-tag {
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--blue-dim);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  padding: 1px 6px;
+  border-radius: var(--r-full);
+  margin-left: 6px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}

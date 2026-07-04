@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results — Ultimate Draft Live</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/results.css" />
+</head>
+<body>
+
+  <!-- Fixture bar — populated by JS -->
+  <div class="results-fixture-bar">
+    <div class="rfb-team">
+      <span class="rfb-abbr" id="rfb-abbr-home"></span>
+      <span class="rfb-name" id="rfb-name-home"></span>
+    </div>
+    <div class="rfb-centre">
+      <div class="rfb-score" id="rfb-score">— — —</div>
+      <div class="rfb-badge">FT</div>
+    </div>
+    <div class="rfb-team right">
+      <span class="rfb-name" id="rfb-name-away"></span>
+      <span class="rfb-abbr" id="rfb-abbr-away"></span>
+    </div>
+  </div>
+
+  <div class="results-wrap">
+
+    <!-- Winner banner -->
+    <div class="results-winner-banner" id="winner-banner">
+      <div class="loading-fixtures"><div class="spinner"></div></div>
+    </div>
+
+    <!-- Final standings -->
+    <div class="results-section">
+      <div class="results-section-label">Final standings</div>
+      <div class="results-standings" id="results-standings">
+        <div class="loading-fixtures"><div class="spinner"></div></div>
+      </div>
+    </div>
+
+    <!-- Your breakdown -->
+    <div class="results-section">
+      <div class="results-section-label">Your breakdown</div>
+      <div class="results-breakdown" id="results-breakdown"></div>
+    </div>
+
+    <!-- Coin summary -->
+    <div class="results-coin-summary" id="coin-summary"></div>
+
+    <!-- Actions -->
+    <div class="results-actions">
+      <button class="btn btn-primary btn-lg" onclick="playAgain()">Play again</button>
+      <button class="btn btn-ghost btn-lg" onclick="goHome()">Back to matches</button>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/results.js"></script>
+
+</body>
+</html>
